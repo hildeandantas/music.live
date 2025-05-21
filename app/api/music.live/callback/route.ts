@@ -51,6 +51,7 @@ export async function GET(request: NextRequest) {
             const result = await response.json()
 
             const homeUrl = REDIRECT_URL || '/'
+            console.log(homeUrl)
             const redirect = NextResponse.redirect(homeUrl)
 
             redirect.cookies.set('spotifyToken', result.access_token, {
