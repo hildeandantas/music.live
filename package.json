@@ -1,27 +1,60 @@
 {
-  "name": "music.live",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.0"
-  },
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
-    "eslint": "^9",
-    "eslint-config-next": "15.3.0",
-    "@eslint/eslintrc": "^3"
-  }
+    "name": "music.live",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev --turbopack",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "prettier": {
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "semi": false,
+        "singleQuote": true,
+        "plugins": [
+            "prettier-plugin-tailwindcss",
+            "tailwind-scrollbar"
+        ]
+    },
+    "dependencies": {
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.0",
+        "@mui/icons-material": "^7.0.2",
+        "@mui/material": "^7.0.2",
+        "axios": "^1.8.4",
+        "bootstrap": "^5.3.5",
+        "firebase": "^11.6.1",
+        "global-agent": "^3.0.0",
+        "install": "^0.13.0",
+        "next": "15.3.0",
+        "nookies": "^2.5.2",
+        "npm": "^11.3.0",
+        "postcss": "^8.5.3",
+        "prettier": "^3.5.3",
+        "prettier-plugin-tailwindcss": "^0.6.11",
+        "query-string": "^9.1.1",
+        "randomstring": "^1.3.1",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "react-multi-carousel": "^2.8.6",
+        "socket.io": "^4.8.1",
+        "socket.io-client": "^4.8.1",
+        "tailwind-scrollbar": "^4.0.2",
+        "use-debounce": "^10.0.4"
+    },
+    "devDependencies": {
+        "@eslint/eslintrc": "^3",
+        "@tailwindcss/postcss": "^4.1.4",
+        "@types/global-agent": "^3.0.0",
+        "@types/node": "^20",
+        "@types/randomstring": "^1.3.0",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "eslint": "^9",
+        "eslint-config-next": "15.3.0",
+        "tailwindcss": "^4",
+        "typescript": "^5"
+    }
 }
