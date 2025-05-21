@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
             NEXT_PUBLIC_SPOTIFY_CLIENT_ID,
             NEXT_PUBLIC_SPOTIFY_REDIRECT_URI,
             CLIENT_SECRET,
-            HOME,
+            REDIRECT_URL,
         } = process.env
 
         if (state === null) {
@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
 
             const result = await response.json()
 
-            const homeUrl = HOME || '/'
+            const homeUrl = REDIRECT_URL || '/'
             const redirect = NextResponse.redirect(homeUrl)
 
             redirect.cookies.set('spotifyToken', result.access_token, {
@@ -61,7 +61,7 @@ export async function GET(request: NextRequest) {
             })
 
             return NextResponse.redirect(
-                `http://localhost:3000?token=${result.access_token}&refreshToken=${result.refresh_token}`
+                `${homeUrl}?token=${result.access_token}&refreshToken=${result.refresh_token}`
             )
         }
     } catch (error) {
