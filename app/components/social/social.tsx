@@ -1,5 +1,5 @@
 'use client'
-import { Box } from '@mui/material'
+import { Box, Divider } from '@mui/material'
 import SocialCard from './socialCard'
 import { useEffect, useState } from 'react'
 import { apiClient } from '@/app/services/apiclient'
@@ -56,21 +56,23 @@ export default function Social() {
         <Box
             sx={{
                 width: '30%',
-                border: '1px solid #ccc',
-                borderRadius: 2,
-                p: 1,
                 display: 'flex',
                 flexDirection: 'column',
-                gap: 1,
+                border: '1px solid #ccc',
             }}
         >
             {followerProfiles.map((profile, index) => (
-                <SocialCard
-                    key={profile.id || index}
-                    urlImage={profile.images[0]?.url}
-                    name={profile.display_name}
-                    listenTo={`${musics[index].name} - ${musics[index].artist}`}
-                />
+                <>
+                    <Box sx={{ px: 1}}>
+                        <SocialCard
+                            key={profile.id || index}
+                            urlImage={profile.images[0]?.url}
+                            name={profile.display_name}
+                            listenTo={`${musics[index].name} - ${musics[index].artist}`}
+                        />
+                    </Box>
+                    <Divider />
+                </>
             ))}
         </Box>
     )

@@ -1,9 +1,10 @@
 import { Box } from '@mui/material'
-import MiniDrawer from './components/MiniDrawer'
+import { Poppins } from 'next/font/google'
 import './globals.css'
+
+import MiniDrawer from './components/MiniDrawer'
 import PlayerContextProvider from './providers/PlayerContext'
 import SpotifyProvider from './providers/spotifyProvider'
-import { Poppins } from 'next/font/google'
 import Player from './components/webPlayer/player'
 
 const popins = Poppins({

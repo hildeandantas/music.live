@@ -9,12 +9,5 @@ export default function SocialCard({
     name?: string
     listenTo?: string
 }) {
-    return (
-        <ProfileHeader
-            urlImage={urlImage}
-            name={name}
-            listenTo={listenTo}
-            outline
-        />
-    )
+    return <ProfileHeader urlImage={urlImage} name={name} listenTo={listenTo}/>
 }

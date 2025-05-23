@@ -34,7 +34,6 @@ export default function PlayerContextProvider({
     useEffect(() => {
         if (!token || playerRef.current) return
 
-        // Evita carregar o script mais de uma vez
         const existingScript = document.getElementById('spotify-player')
         if (!existingScript) {
             const script = document.createElement('script')

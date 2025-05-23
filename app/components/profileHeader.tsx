@@ -6,23 +6,25 @@ export default function ProfileHeader({
     urlImage,
     name,
     listenTo,
+    shadow,
 }: {
     outline?: boolean
     urlImage?: string
     name?: string
     listenTo?: string
+    shadow?: boolean
 }) {
     return (
         <Box
             sx={{
                 width: '100%',
-                padding: 1,
+                p: 1,
+
                 border: outline ? '1px solid #ccc' : 'none',
                 borderRadius: 2,
+                boxShadow: shadow ? '0 0px 4px rgba(0, 0, 0, 0.2)' : 'none',
                 maxHeight: '70px',
-
                 overflow: 'hidden',
-
                 whiteSpace: 'nowrap',
             }}
         >

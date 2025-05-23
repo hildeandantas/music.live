@@ -36,8 +36,6 @@ export default function Feed() {
                 width: '50%',
                 overflow: 'auto',
                 paddingX: 1,
-                border: '1px solid #ccc',
-                borderRadius: 2,
             }}
         >
             <CreatePost
@@ -51,22 +49,22 @@ export default function Feed() {
                 }}
             />
             <Post
-                from={user?.display_name}
-                urlImage={user?.images?.[0]?.url}
-                listenTo={`${current_track?.name} - ${current_track?.artists?.[0]?.name}`}
+                from="Hildean Dantas"
+                urlImage="https://i.scdn.co/image/ab6775700000ee85134a156635cbf91e446fb3e3"
+                listenTo="Avareza - Xamã"
                 postText="What Are you listening to?"
             />
             <Post
-                from={user?.display_name}
-                urlImage={user?.images?.[0]?.url}
-                listenTo={`${current_track?.name} - ${current_track?.artists?.[0]?.name}`}
+                from="Hildean Dantas"
+                urlImage="https://i.scdn.co/image/ab6775700000ee85134a156635cbf91e446fb3e3"
+                listenTo="Avareza - Xamã"
                 postText="What Are you listening to?"
                 imgUrl="https://fastly.picsum.photos/id/26/4209/2769.jpg?hmac=vcInmowFvPCyKGtV7Vfh7zWcA_Z0kStrPDW3ppP0iGI"
             />
             <Post
-                from={user?.display_name}
-                urlImage={user?.images?.[0]?.url}
-                listenTo={`${current_track?.name} - ${current_track?.artists?.[0]?.name}`}
+                from="Hildean Dantas"
+                urlImage="https://i.scdn.co/image/ab6775700000ee85134a156635cbf91e446fb3e3"
+                listenTo="Avareza - Xamã"
                 postText="I love Xamã"
                 music={{
                     name: 'Sagitário',
@@ -74,17 +72,6 @@ export default function Feed() {
                     image: 'https://i.scdn.co/image/ab67616d0000b2733eb1cf8913802f86b98bf6c4',
                 }}
             />
-            {/* {
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                posts.map((post: any, index: number) => (
-                    <Post
-                        key={index}
-                        from={'John Doe'}
-                        urlImage={'/static/images/avatar/1.jpg'}
-                        postText={post.body}
-                    />
-                ))
-            } */}
         </Box>
     )
 }

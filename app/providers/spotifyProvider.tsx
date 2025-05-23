@@ -6,7 +6,6 @@ import queryString from 'query-string'
 import randomstring from 'randomstring'
 import { apiClient } from '@/app/services/apiclient'
 import { User } from '@/app/types/User'
-import { socket } from '../services/socket'
 
 type SpotifyContextType = {
     token: string | null
@@ -32,7 +31,6 @@ export default function SpotifyProvider({
     const client_id = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID
     const token = cookies.spotifyToken
     const refreshToken = cookies.spotifyRefreshToken
-    socket.connect()
 
     useEffect(() => {
         const { searchParams } = new URL(window.location.href)
@@ -80,9 +78,6 @@ export default function SpotifyProvider({
                 })
 
                 setUser(response.data)
-
-                socket.emit('user-connected', response.data.id)
-
                 setCookie(null, 'userData', JSON.stringify(response.data), {
                     path: '/',
                     maxAge: 3600,

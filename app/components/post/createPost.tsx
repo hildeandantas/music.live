@@ -47,6 +47,8 @@ export default function CreatePost({
                 width: '100%',
                 borderRadius: 2,
                 mb: 2,
+                mt: 1,
+                border: '1px solid #ccc',
             }}
         >
             <ProfileHeader
@@ -54,33 +56,34 @@ export default function CreatePost({
                 name={from}
                 listenTo={listenTo}
             />
-            <TextField
-                sx={{ width: '100%', mt: 1 }}
-                label="O que você está ouvindo"
-                onChange={(e) => setPostText(e.target.value)}
-            />
-            <Box sx={{ display: 'flex', gap: 1, mt: 1 }}>
-                <IconButton
-                    disableRipple
-                    sx={{
-                        flex: 1,
-                        border: '1px solid #ccc',
-                        borderRadius: 2,
-                        ':hover': { backgroundColor: '' },
-                    }}
-                    onClick={handleOpen}
-                >
-                    <Replay />
-                    <Typography>Music</Typography>
-                </IconButton>
-                <input
-                    ref={fileInputRef}
-                    type="file"
-                    accept="image/*"
-                    style={{ display: 'none' }}
-                    onChange={handleFileChange}
+            <Box sx={{ p: 1, pt: 0 }}>
+                <TextField
+                    sx={{ width: '100%', mt: 1 }}
+                    label="O que você está ouvindo"
+                    onChange={(e) => setPostText(e.target.value)}
                 />
-                {/* <IconButton
+                <Box sx={{ display: 'flex', gap: 1, mt: 1 }}>
+                    <IconButton
+                        disableRipple
+                        sx={{
+                            flex: 1,
+                            border: '1px solid #ccc',
+                            borderRadius: 2,
+                            ':hover': { backgroundColor: '' },
+                        }}
+                        onClick={handleOpen}
+                    >
+                        <Replay />
+                        <Typography>Music</Typography>
+                    </IconButton>
+                    <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept="image/*"
+                        style={{ display: 'none' }}
+                        onChange={handleFileChange}
+                    />
+                    {/* <IconButton
                     disableRipple
                     sx={{ flex: 1, border: '1px solid #ccc', borderRadius: 2 }}
                     onClick={handleClick}
@@ -88,13 +91,18 @@ export default function CreatePost({
                     <Image />
                     <Typography>Image</Typography>
                 </IconButton> */}
-                <IconButton
-                    disableRipple
-                    sx={{ flex: 1, border: '1px solid #ccc', borderRadius: 2 }}
-                >
-                    <Replay />
-                    <Typography>Publish</Typography>
-                </IconButton>
+                    <IconButton
+                        disableRipple
+                        sx={{
+                            flex: 1,
+                            border: '1px solid #ccc',
+                            borderRadius: 2,
+                        }}
+                    >
+                        <Replay />
+                        <Typography>Publish</Typography>
+                    </IconButton>
+                </Box>
             </Box>
             <Modal open={open} onClose={handleClose}>
                 <Box

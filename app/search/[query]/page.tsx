@@ -2,7 +2,7 @@
 'use client'
 
 import { apiClient } from '@/app/services/apiclient'
-import { Box, CircularProgress, Typography } from '@mui/material'
+import { Box, CircularProgress } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { searchResult } from '@/app/types/SearchResult'
 import React from 'react'
@@ -93,7 +93,7 @@ export default function Search({
                 {!loading && searchResults ? (
                     <>
                         <div className="mb-8 flex h-[300px] gap-4">
-                            <div className="bg-black-400 flex flex-1/2 rounded-lg p-4">
+                            {/* <div className="bg-black-400 flex flex-1/2 rounded-lg p-4">
                                 <img
                                     src={
                                         searchResults?.tracks?.items[0]?.album
@@ -112,8 +112,8 @@ export default function Search({
                                         {searchResults.tracks?.items[0]?.name}
                                     </Typography>
                                 </Box>
-                            </div>
-                            <div className="bg-black-500 flex-1/2 rounded-lg">
+                            </div> */}
+                            <div className="flex-1/2 rounded-lg">
                                 <div className="max-h-full overflow-auto">
                                     {searchResults.tracks?.items.map(
                                         (track, index) => (
@@ -148,7 +148,6 @@ export default function Search({
                                                             )
                                                             .join(', ')}
                                                     >
-                                                        {/* {track?.type} */}
                                                         {track?.artists
                                                             .map(
                                                                 (artist) =>
